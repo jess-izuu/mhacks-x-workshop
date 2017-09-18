@@ -5,6 +5,7 @@ WORKDIR /usr/src/app
 COPY . /usr/src/app
 
 RUN apt-get update && \
+	apt-get install -y python && \
 	apt-get install -y python3 && \
 	apt-get install -y python3-pip
 
