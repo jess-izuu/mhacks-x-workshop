@@ -1,0 +1,23 @@
+version: '3'
+services:
+  mnist:
+    image: mnist
+    build:
+      context: ./tensorflow-mnist
+      dockerfile: Dockerfile
+    ports:
+      - 5000:5000
+  playground:
+    image: playground
+    build:
+      context: ./playground
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8080
+  chat:
+    image: chat
+    build:
+      context: ./chat-models
+      dockerfile: Dockerfile
+    ports:
+      - 6000:6000
