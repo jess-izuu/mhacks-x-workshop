@@ -1,23 +1,16 @@
 version: '3'
 services:
-  mnist:
-    image: mnist
+  tensorflow-notebook:
+    image: jupyter/tensorflow-notebook
     build:
-      context: ./tensorflow-mnist
+      context: ./notebook
+      dockerfile: Dockerfile
+    ports:
+      - 8888:8888
+  not-hot-dog:
+    image: not-hot-dog
+    build:
+      context: ./notHotDogWeb
       dockerfile: Dockerfile
     ports:
       - 5000:5000
-  playground:
-    image: playground
-    build:
-      context: ./playground
-      dockerfile: Dockerfile
-    ports:
-      - 8080:8080
-  chat:
-    image: chat
-    build:
-      context: ./chat-models
-      dockerfile: Dockerfile
-    ports:
-      - 6000:6000
